@@ -1,8 +1,9 @@
 // let's go!
 import React from 'react'
 import {render} from 'react-dom';
+import Main from './components/Main';
 
 //  Import Css
 import css from './styles/style.styl';
 
-render(<p>Hello world</p>, document.getElementById('root'))
+render(<Main/>, document.getElementById('root'))
