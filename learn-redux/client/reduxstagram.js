@@ -10,13 +10,13 @@ import PhotoGrid from './components/PhotoGrid';
 import css from './styles/style.styl';
 
 const router = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-      <IndexRoute component={Main}></IndexRoute>
-       <Route path="/" component={Main}></Route>
-    </Route>
-  </Router>
-);
+    <Router history={browserHistory}>
+      <Route path="/" component={Main}>
+        <IndexRoute component={PhotoGrid}></IndexRoute>
+        <Route path="/view/:postId" component={Single}></Route>
+      </Route>
+    </Router>
+  )
 
 render(
     router,
