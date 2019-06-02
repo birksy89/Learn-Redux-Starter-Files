@@ -15,13 +15,20 @@ export default class Comments extends Component {
     );
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Submitting...');
+    
+}
+ 
+
   render() {
     const { postComments } = this.props;
 
     return (
       <div className="comments">
         {postComments.map(this.renderComment)}
-        <form ref="commentForm" className="comment-form">
+        <form onSubmit={() => this.handleSubmit} ref="commentForm" className="comment-form">
           <input type="text" ref="author" placeholder="author" />
           <input type="text" ref="comment" placeholder="comment" />
           <input type="submit" hidden />
