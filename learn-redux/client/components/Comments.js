@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 
 export default class Comments extends Component {
   constructor(props) {
-    super( props );  
+    super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderComment = this.renderComment.bind(this);
   }
 
   renderComment(comment, index) {
-    //console.log(comment);
-
+    const { postId } = this.props.params;
     return (
       <div className="comment" key={index}>
         <p>
           <strong>{comment.user}</strong>
           {comment.text}
-          <button className="remove-comment">&times;</button>
+          <button onClick={this.props.removeComment.bind(null, postId, index)} className="remove-comment">
+            &times;
+          </button>
         </p>
       </div>
     );
@@ -30,7 +32,6 @@ export default class Comments extends Component {
     // Call the actionCreator
     this.props.addComment(postId, author, comment);
     this.refs.commentForm.reset();
-
   }
 
   render() {
