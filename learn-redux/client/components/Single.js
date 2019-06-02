@@ -7,17 +7,17 @@ export default class Single extends Component {
     const { posts, params, comments } = this.props;
     //   index of the post
     const i = posts.findIndex((post) => post.code === params.postId);
-    console.log(i);
+    // console.log(i);
     //  get us the post
     const post = posts[i];
-    console.log(post);
+    //console.log(post);
     // get the comments
-    const postComments = comments[params.postId] || []
+    const postComments = comments[params.postId] || [];
 
     return (
       <div className="single-photo">
         <Photo i={i} post={post} {...this.props} />
-        <Comments postComments={postComments}/>
+        <Comments postComments={postComments} {...this.props} />
       </div>
     );
   }
