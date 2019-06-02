@@ -5,6 +5,8 @@
 
 function comments(state=[],action){
 
+    console.log('In comments reducer');
+    
     return state;
     
     }

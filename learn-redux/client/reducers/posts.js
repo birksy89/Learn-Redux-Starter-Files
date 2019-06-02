@@ -5,6 +5,8 @@
 
 function posts(state = [], action) {
 
+  // console.log('In posts reducer');
+
     switch(action.type){
         case 'INCREMENT_LIKES':
         //  Get the key of what was clicked
