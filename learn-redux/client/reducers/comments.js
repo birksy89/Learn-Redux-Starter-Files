@@ -4,7 +4,7 @@
 //  2-  a copy of the current state
 
 function comments(state=[],action){
-    console.log(state,action);
+    // console.log(state,action);
     
     return state;
     
