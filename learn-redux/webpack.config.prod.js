@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map',
@@ -10,19 +11,22 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': "'production'"
+        'NODE_ENV': '\'production\''
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false
       }
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Redux-stagram',
     })
   ],
   module: {
